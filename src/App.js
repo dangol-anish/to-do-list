@@ -5,8 +5,9 @@ import Todo from "./components/Todo";
 
 function App() {
   const [todos, setTodos] = useState(["learn react", "grind some leet code"]);
+
   return (
-    <div className="h-screen w-screen p-4 bg-gradient-to-br from-zinc-900 to-slate-500 text-white flex justify-center items-center">
+    <div className="h-screen w-screen p-4 bg-gradient-to-br from-zinc-900 to-sl`ate-500 text-white flex justify-center items-center">
       <div className="bg-black/70 w-[90%] md:w-[60%] lg:w-[40%] h-[85%] rounded-xl border border-slate-700 shadow-2xl flex flex-col items-center">
         <h3 className="mt-5 text-4xl font-bold">Todo List</h3>
         <form className="mt-5 flex justify-center items-center gap-3">
