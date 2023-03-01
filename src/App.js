@@ -1,10 +1,22 @@
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Todo from "./components/Todo";
+import { db } from "./firebase";
+import { query, collection } from "firebase/firestore";
 
 function App() {
   const [todos, setTodos] = useState(["learn react", "grind some leet code"]);
+
+  //Create todo
+  //Read todo
+
+  useEffect(() => {
+    const q = query(collection(db, "todos"));
+  }, []);
+
+  //Update todo
+  //Delete todo
 
   return (
     <div className="h-screen w-screen p-4 bg-gradient-to-br from-zinc-900 to-sl`ate-500 text-white flex justify-center items-center">
