@@ -10,8 +10,15 @@ function App() {
     setTasks((prevState) => [...prevState, task]);
   };
 
+  /* The filter() method iterates through each task in the previous state array and returns a new array that only includes tasks whose id does not match the id passed as an argument to the function. This new array is then used to update the state of the tasks using the setTasks() function. */
   const deleteTask = (id) => {
     setTasks((prevState) => prevState.filter((t) => t.id !== id));
+  };
+
+  const updateTask = (id) => {
+    setTasks((prevState) =>
+      prevState.map((t) => (t.id === id ? { ...t, checked: !t.checked } : t))
+    );
   };
 
   return (
@@ -20,7 +27,13 @@ function App() {
         <h1>My Task List</h1>
       </header>
       <CustomForm addTask={addTask} />
-      {tasks && <TaskList tasks={tasks} deleteTask={deleteTask} />}
+      {tasks && (
+        <TaskList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          updateTask={updateTask}
+        />
+      )}
     </div>
   );
 }

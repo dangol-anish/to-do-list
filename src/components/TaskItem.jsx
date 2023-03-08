@@ -5,12 +5,13 @@ import styles from "./TaskItem.module.css";
 import { AiOutlineCheck, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { useState } from "react";
 
-const TaskItem = ({ task, deleteTask }) => {
+const TaskItem = ({ task, deleteTask, updateTask }) => {
   //state
   const [isChecked, setIsChecked] = useState(task.checked);
 
   const handleCheckboxChange = (e) => {
     setIsChecked(!isChecked);
+    updateTask(task.id);
   };
 
   return (
