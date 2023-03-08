@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./TaskItem.module.css";
 
 //library imports
-import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { useState } from "react";
 
 const TaskItem = ({ task }) => {
@@ -31,6 +31,22 @@ const TaskItem = ({ task }) => {
               <AiOutlineCheck strokeWidth={2} width={24} height={24} />
             </p>
           </label>
+        </div>
+        <div className={styles["task-groups"]}>
+          <button
+            className="btn"
+            aria-label={`Update ${task.name} Task`}
+            // onClick={}
+          >
+            <AiOutlineEdit />
+          </button>
+          <button
+            className={`btn ${styles.delete}`}
+            aria-label={`Delete ${task.name} Task`}
+            // onClick={}
+          >
+            <AiOutlineDelete />
+          </button>
         </div>
       </li>
     </div>
