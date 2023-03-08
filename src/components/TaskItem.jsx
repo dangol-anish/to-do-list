@@ -33,7 +33,7 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
             </p>
           </label>
         </div>
-        <div className={styles["task-groups"]}>
+        <div className="custom">
           <button
             className="btn"
             aria-label={`Update ${task.name} Task`}
