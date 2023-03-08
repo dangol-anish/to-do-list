@@ -11,6 +11,7 @@
 
 .task-group {
   display: flex;
+  flex-direction: row;
   align-items: center;
   --taskgroup-gap: 0.5em;
   gap: var(--taskgroup-gap);

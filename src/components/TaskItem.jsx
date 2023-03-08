@@ -5,7 +5,7 @@ import styles from "./TaskItem.module.css";
 import { AiOutlineCheck, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { useState } from "react";
 
-const TaskItem = ({ task }) => {
+const TaskItem = ({ task, deleteTask }) => {
   //state
   const [isChecked, setIsChecked] = useState(task.checked);
 
@@ -43,7 +43,8 @@ const TaskItem = ({ task }) => {
           <button
             className={`btn ${styles.delete}`}
             aria-label={`Delete ${task.name} Task`}
-            // onClick={}
+            //arrow func bc if not whenever component mounted it would fire off without listening to click event
+            onClick={() => deleteTask(task.id)}
           >
             <AiOutlineDelete />
           </button>
